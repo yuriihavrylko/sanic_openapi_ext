@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "sanic-openapi-ext"
+version = "0.1.0"
+description = "Sanic OpenAPI extension offers an enhanced and convenient way to generate OpenAPI (Swagger) documentation from Marshmallow schemas"
+authors = ["Yurii Havrylko"]
+readme = "README.md"
+packages = [
+    {include = "sanic_openapi_ext"},
+]
+include = ["CHANGELOG.md"]
+
+[tool.bandit.assert_used]
+skips = ["*/*_test.py", "*/test_*.py"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+sanic-ext = "^23.12.0"
+marshmallow = "^3.20.2"
+
+[tool.poetry.group.dev.dependencies]
+sanic = "^23.12.1"
+pre-commit = "^3.5.0"
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
