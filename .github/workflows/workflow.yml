@@ -1,0 +1,34 @@
+name: Build, Test, and Publish Python Package
+
+on:
+  push:
+  release:
+    types: [published]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+      - uses: Gr1N/setup-poetry@v8
+      - name: Install deps
+        run: poetry install
+      - name: Run tests
+        run: poetry run pytest tests/
+
+  publish-service-client-package:
+    needs: run-tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and publish to PyPI
+        uses: JRubics/poetry-publish@v2.0
+        with:
+          pypi_token: ${{ secrets.PYPI_TOKEN }}
+          repository_name: "pypi"
+    if: github.event_name == 'release' && github.event.action == 'published'
