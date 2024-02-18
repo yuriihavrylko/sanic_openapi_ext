@@ -2,8 +2,26 @@
 name = "sanic-openapi-ext"
 version = "0.1.0"
 description = "Sanic OpenAPI extension offers an enhanced and convenient way to generate OpenAPI (Swagger) documentation from Marshmallow schemas"
-authors = ["Yurii Havrylko"]
+authors = ["Yurii Havrylko <yurii.havrylko@gmail.com>"]
 readme = "README.md"
+license = "MIT"
+homepage = "https://pypi.org/project/sanic-openapi-ext/"
+repository = "https://github.com/yuriihavrylko/sanic_openapi_ext"
+documentation = "https://github.com/yuriihavrylko/sanic_openapi_ext/blob/master/README.md"
+keywords = ["python", "sanic", "swagger", "marshmallow", "open-api", "sanic-ext"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12"
+]
 packages = [
     {include = "sanic_openapi_ext"},
 ]

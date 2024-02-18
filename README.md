@@ -135,7 +135,7 @@ Note:
 - If the field is of type `fields.Enum`, a `doc.Schema`, which accepts the enumeration, is returned.
 - If the field is of type `fields.List`, the inner_field is accessed. If the inner_field is a `fields.Nested`, a `doc.Object` is returned with the properties of the nested schema. If the inner_fields belong to other types, a `doc.Array` is returned with the properties of the inner type.
 - For fields not listed in the table, `doc.String` is used as a default.
-  
+
 Please, remember that this mapping may vary according to the use and the specific need of the project.
 
 # Contribute
